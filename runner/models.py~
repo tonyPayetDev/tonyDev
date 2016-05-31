@@ -1,0 +1,19 @@
+from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
+
+
+
+
+@python_2_unicode_compatible
+class Portfolio(models.Model):
+    url = models.CharField(max_length=200)
+    name_project =  models.CharField(max_length=200,)
+    description =  models.CharField(max_length=200)
+    
+    class Meta:
+        verbose_name = 'Portfolio'
+    
+    def __str__(self):              # __unicode__ on Python 2
+        return self.url
+        
+

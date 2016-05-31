@@ -1,0 +1,41 @@
+{% extends 'base_portfolio.html' %}
+
+
+{% load i18n %}
+{% load staticfiles %}
+	{% block headerwrap %}
+	    <div class="container">
+
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+					<h4>HELLO , MY NAME IS</h4>
+					<h1>TONY PAYET</h1>
+					<h4>DEVELOPER DJANGO / ANGULARJS </h4>
+				</div>
+			</div><! --/row -->
+	    </div> <!-- /container -->
+		{% endblock %}
+{% block content %}
+
+         <div class="row ">
+            {% for line in portfolio %}
+
+            <div class="col-md-4 portfolio-item gallery">
+       	          <a href="/portfolio/{{line.pk}}">
+
+                    <img class="img-responsive" src='{% static  line.url  %}' alt="">
+                </a>
+
+                <h3>
+                    <a href="#">{{line.name_project}}</a>
+
+                </h3>
+                <p>{{line.description}}</p>
+            	</div>
+		{% empty %}
+		    <li>No articles yet.</li>
+		{% endfor %}
+            	</div>
+{% endblock %}
+
+

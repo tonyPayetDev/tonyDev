@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="row centered mt mb ">
+
+            {% for line in portfolio %}
+         
+            <div class="col-md-4 portfolio-item">
+       	          <a href="/portfolio/{{line.pk}}">
+
+                    <img class="img-responsive" src='{% static  line.url  %}' alt="">
+                </a>
+
+                <h3>
+                    <a href="#">{{line.name_project}}</a>
+
+                </h3>
+                <p>{{line.description}}</p>
+            	</div>
+		{% empty %}
+		    <li>No articles yet.</li>
+		{% endfor %}
+
+{% endblock %}

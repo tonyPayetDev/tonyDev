@@ -1,0 +1,23 @@
+
+
+{% extends 'base_portfolio.html' %}
+
+	{% block headerwrap %}
+	    <div class="container">
+
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+					<h4>Oracom </h4>
+					<h1>PAris </h1>
+					<h4>DEVELOPER Python /Django  </h4>
+				</div>
+			</div><! --/row -->
+	    </div> <!-- /container -->
+		{% endblock %}
+
+       			{% block content %}
+
+
+{{portfolio.url}} 
+{% endblock %}
+
